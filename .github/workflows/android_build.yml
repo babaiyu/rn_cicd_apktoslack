@@ -51,9 +51,9 @@ jobs:
       #     keyStorePassword: ${{ secrets.ANDROID_KEY_STORE_PASSWORD }}
       #     keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
 
-      - name: Upload apk to Slack
-        id: upload_apk_to_slack
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          SLACK_SIGNING_SECRET: ${{ secrets.SLACK_SIGNING_SECRET }}
-        run: chmod +x ./slack.js && yarn android:slack
+      # - name: Upload apk to Slack
+      #   id: upload_apk_to_slack
+      #   env:
+      #     SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+      #     SLACK_SIGNING_SECRET: ${{ secrets.SLACK_SIGNING_SECRET }}
+      #   run: chmod +x ./slack.js && yarn android:slack
