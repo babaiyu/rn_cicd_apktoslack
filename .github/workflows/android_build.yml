@@ -56,4 +56,4 @@ jobs:
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           SLACK_SIGNING_SECRET: ${{ secrets.SLACK_SIGNING_SECRET }}
-        run: yarn android:slack
+        run: chmod +x ./slack.js && yarn android:slack
