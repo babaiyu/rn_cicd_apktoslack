@@ -53,8 +53,7 @@ jobs:
 
       - name: Upload apk to Slack
         id: upload_apk_to_slack
-        with:
-          run: yarn android:slack
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           SLACK_SIGNING_SECRET: ${{ secrets.SLACK_SIGNING_SECRET }}
+        run: yarn android:slack
