@@ -28,7 +28,7 @@ async function sendApk() {
     const result = await slackBot.client.files.upload({
       // The token you used to initialize your app is stored in the `context` object
       token,
-      channels: '#general',
+      channels: '#random',
       initial_comment: "Here's new updated build :smile:",
       // Include your filename in a ReadStream here
       file: createReadStream(fileName),
