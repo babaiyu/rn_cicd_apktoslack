@@ -13,7 +13,6 @@ const slackBot = new App({
 async function sendApk() {
   const fileName = path.resolve(
     __dirname,
-    '..',
     'android',
     'app',
     'build',
@@ -25,12 +24,10 @@ async function sendApk() {
 
   try {
     // Call the files.upload method using the built-in WebClient
-    const result = await slackBot.client.files.upload({
-      // The token you used to initialize your app is stored in the `context` object
+    await slackBot.client.files.upload({
       token,
-      channels: '#random',
+      channels: '#android',
       initial_comment: "Here's new updated build :smile:",
-      // Include your filename in a ReadStream here
       file: createReadStream(fileName),
     });
     console.log('Sucessfully sent');
