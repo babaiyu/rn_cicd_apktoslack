@@ -40,7 +40,6 @@ jobs:
 
       - name: Generate App APK
         run: |
-          yarn package:android
           cd android && ./gradlew assembleRelease --no-daemon
 
       # - name: Signing APK
