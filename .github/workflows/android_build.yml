@@ -1,9 +1,9 @@
 name: Android CI
 
 on:
-  workflow_dispatch:
-  release:
-    types: [published]
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -56,7 +56,3 @@ jobs:
       #     alias: ${{ secrets.ANDROID_ALIAS }}
       #     keyStorePassword: ${{ secrets.ANDROID_KEY_STORE_PASSWORD }}
       #     keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
-
-      # - name: Upload apk to Slack
-      #   id: upload_apk_to_slack
-      #   run: chmod +x ./slack.js && yarn android:slack
